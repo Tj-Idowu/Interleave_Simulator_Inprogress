@@ -5,10 +5,9 @@ import hashlib
 import os
 import glob
 
-
 def create_sha256_manifest(tar_files, output_manifest):
 
-    BLOCK_SIZE = 65536  # Read files in 64 KB blocks
+    BLOCK_SIZE = 1024 * 1024  # read files in 1 MB blocks
 
     try:
         # open a manifest for all .tar.gz files in the input folder
